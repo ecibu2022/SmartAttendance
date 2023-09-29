@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="font-awesome-icons/font-awesome-4.7.0/css/font-awesome.css">
+    <link rel="stylesheet" href="admin.css">
+
+    <style>
+        *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: "Poppins", sans-serif;
+}
+
+h1{
+    font-style: 2.5rem;
+    font-weight: 700;
+    color: rgb(35, 35, 85);
+}
+
+span{
+    font-size: .9rem;
+    color: #757373;
+}
+
+h6{
+    font-size: 1.1rem;
+    color: rgb(24, 24, 49);
+}
+
+/* navigation */
+nav{
+    display: none;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 1vw 8vw;
+    align-items: center;
+    box-shadow: 2px 2px 10px rgb(0, 0, 0.15);
+    /* Sticking the navbar on top */
+    position: fixed;
+    width: 100%;
+    background-color: #fff;
+    /* end */
+    z-index: 999;
+    /* So that when you are scrolling content it does not overlap the nav bar */
+}
+
+nav img{
+    width: 150px;
+    height: 50px;
+    cursor: pointer;
+}
+
+nav .navigation{
+    display: flex;
+    /* Puts everything in one direction horizontally */
+}
+
+#menu-btn{
+    width: 30px;
+    height: 30px;
+    display: none;
+}
+
+#menu-close{
+    display: none;
+} 
+
+nav .navigation ul{
+   display: flex; 
+   justify-content: flex-end;
+   align-items: center;
+}
+
+nav .navigation ul li{
+    list-style: none;
+    margin-left: 30px;
+}
+
+nav .navigation ul li a{
+    text-decoration: none;
+    color: rgb(21, 21, 100);
+    font-size: 16px;
+    font-weight: 500;
+    transition: 0.3 ease;
+}
+
+nav .navigation ul li a:hover{
+    color: #FDC93B;
+}
+/* end of navigation */
+
+
+/* Responsiveness */
+/* Nav Bar */
+@media (max-width: 769px) {
+    nav{
+        display: flex;
+        padding: 15px 20px ;
+        position: fixed;
+    }
+    nav img{
+        width: 130px;
+    }
+    
+    #menu-btn{
+        display: initial;
+    }
+
+    #menu-close{
+        display: initial;
+        font-size: 1.6rem;
+        padding: 30px 0 20px 20px;
+        color: #fff;
+        cursor: pointer;
+    }
+    nav .navigation ul{
+        position: absolute;
+        top: 0;
+        right: -300px;
+        width: 300px;
+        height: 100vh;
+        background: #101C32;
+        backdrop-filter: blur(4.5px);
+        border: 1px solid ;
+        display: flex; 
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+    nav .navigation ul.active{
+        right: 0;
+    }
+    nav .navigation ul li{
+        padding: 20px 0 20px 40px;
+        margin-left: 0;
+    }
+    nav .navigation ul li a{
+        color: #fff;
+ 
+    }
+    /* End of Nav Bar */
+}
+    </style>
+    
+</head>
+<body>
+
+    <!-- Nav Bar -->
+    <!-- navigation bar -->
+    <nav>
+        <img src="images/tech2.png" alt="" srcset="">
+        <div class="navigation">
+            <ul class="navbar">
+                <label id="menu-close" for="Closing Menu">X</label>
+                <!-- Closing Menu -->
+                <li><a href="">Home</a></li>
+                <li><a href="#home-content">Manage Users</a></li>
+                <li><a href="">Blog</a></li>
+                <li><a href="">Courses</a></li>
+                <li><a href="">Contact</a></li>
+            </ul>
+            <!-- Amburger Icon or Menu Icon -->
+            <img id="menu-btn" src="images/menu.PNG" alt="" srcset="">
+        </div>
+    </nav>
+    <!-- end of navigation -->
+
+
+
+    <div class="sidebar">
+
+        <div class="user-profile">
+            <img src="images/school.jpg" alt="" srcset="">
+            <p>Admin Ecibu Michael</p>
+        </div>
+
+        <ul>
+            <li><a href="#" id="home"><i class="fa fa-home"></i>Home</a></li>
+            <li><a href="#" id="about"><i class="fa fa-server"></i>Manage User</a></li>
+            <li><a href="#" id="services"><i class="fa fa-group"></i>Add User</a></li>
+            <li><a href="#" id="contact"><i class="fa fa-trash"></i>Remove User</a></li>
+            <li><a href="#" id="contact"><i class="fa fa-user"></i>Profile</a></li>
+            <li><a href="#" id="logout"><i class="fa fa-sign-out"></i>Logout</a></li>
+        </ul>
+    </div>
+
+
+    <div class="content">
+        <section id="home-content" class="page-content">
+
+           <div class="row">
+            <div class="card">
+                <img src="images/school.jpg" alt="" srcset="">
+                <h4>Weekly</h4>
+                <p>No. of days</p>
+                <p>Days Early</p>
+                <p>Days Late</p>
+            </div>
+
+            <div class="card">
+                <img src="images/school.jpg" alt="" srcset="">
+                <h4>Monthly</h4>
+                <p>No. of days</p>
+                <p>Days Early</p>
+                <p>Days Late</p>
+            </div>
+
+           <div class="card">
+            <img src="images/school.jpg" alt="" srcset="">
+            <h4>Anually</h4>
+            <p>No. of days</p>
+            <p>Days Early</p>
+            <p>Days Late</p>
+        </div>
+    </section>
+
+        </div>
+
+        <div id="about-content" class="page-content">Clock In Content Goes Here</div>
+        <div id="services-content" class="page-content">Clock Out Content Goes Here</div>
+        <div id="contact-content" class="page-content">Profile Content Goes Here</div>
+    
+    </div>
+
+
+    <script>
+        // Displaying menu when amburger is clicked
+        let navBar=document.querySelector('.navbar');
+    
+        // Opening Menu
+        document.querySelector('#menu-btn').onclick = () =>{
+            navBar.classList.toggle('active');
+        }
+        // Closing menu
+        document.querySelector('#menu-close').onclick = () =>{
+            navBar.classList.remove('active');
+        }
+        // End of Nav Bar
+    
+        window.onscroll = () =>{
+            navBar.classList.remove('active');
+        }
+    </script>
+
+    <script src="script.js"></script>
+</body>
+</html>
