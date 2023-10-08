@@ -1,0 +1,119 @@
+:root{
+    --orange: orange;
+    --body: #f1f1f1;
+    --black: #212121;
+    --white: #fff;
+    --red: #ff0000;
+}
+
+body {
+    background-color: var(--body);
+}
+section{
+    margin-top: 100px;
+}
+#user-profile{
+    margin-top: 50px;
+}
+h5{
+    color: var(--orange);
+}
+
+button{
+    color: var(--white);
+    background: var(--orange);
+}
+.alert{
+    background: var(--orange);
+    color: var(--white);
+    border: none;
+}
+
+.container .logout{
+    background: var(--red);
+    color: var(--white);
+    border: none;
+}
+.navbar {
+    position: fixed;
+    width: 100%;
+}
+
+.navbar-nav .nav-link {
+    color: var(--black);
+}
+
+.navbar-nav .nav-item a:hover {
+    color: var(--orange);
+}
+
+.navbar-brand {
+    margin-left: -7rem;
+    float: left;
+    color: var(--orange);
+}
+
+.navbar-nav {
+    margin-left: 40rem;
+}
+
+#admin-img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 5px;
+}
+/* Media Queries */
+@media only screen and (max-width: 600px) {
+    section{
+    margin-top: 10px;
+}
+    .navbar-brand {
+        margin-left: 0rem;
+    }
+
+    .navbar-nav {
+        margin-left: 0rem;
+    }
+
+}
+
+@media only screen and (max-width: 900px) {
+    section{
+    margin-top: 10px;
+}
+    .navbar-brand {
+        margin-left: -2rem;
+    }
+
+    .navbar-nav {
+        margin-left: -2rem;
+    }
+}
+
+@media only screen and (max-width: 912px) {
+    section{
+    margin-top: 10px;
+}
+    .navbar-brand {
+        margin-left: -2rem;
+    }
+
+    .navbar-nav {
+        margin-left: -2rem;
+    }
+}
+
+@media only screen and (max-width: 720px) {
+    section{
+    margin-top: 10px;
+}
+    .navbar-brand {
+        margin-left: 0rem;
+    }
+
+    .navbar-nav {
+        margin-left: 0rem;
+    }
+}

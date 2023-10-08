@@ -1,0 +1,204 @@
+:root{
+    --orange: orange;
+    --body: #f1f1f1;
+    --black: #212121;
+    --white: #fff;
+    --red: #ff0000;
+}
+
+
+/* Admin Dashboard */
+body {
+    background-color: var(--body);
+}
+#addUser{
+    margin-left: 7rem;
+    margin-top: -1rem;
+}
+
+section {
+    margin-top: 10px;
+}
+
+#admin-home{
+    margin-top: 100px;
+}
+#admin-profile{
+    margin-top: 60px;
+}
+.alert{
+    background: var(--orange);
+    color: var(--white);
+    border: none;
+}
+
+.container .logout{
+    background: var(--red);
+    color: var(--white);
+    border: none;
+}
+
+h5{
+    color: var(--orange);
+}
+.navbar {
+    position: fixed;
+    width: 100%;
+}
+
+.navbar-nav .nav-link {
+    color: var(--black);
+}
+
+.navbar-nav .nav-item a:hover {
+    color: var(--orange);
+}
+
+.navbar-brand {
+    margin-left: -7rem;
+    float: left;
+    color: var(--orange);
+}
+
+.navbar-nav {
+    margin-left: 44rem;
+}
+
+#admin-img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 5px;
+}
+
+/* Add User form */
+.input-container {
+    display: flex;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.icon {
+    padding: 10px;
+    background: var(--orange);
+    color: var(--white);
+    min-width: 50px;
+    text-align: center;
+}
+
+.input-field {
+    width: 80%;
+    padding: 10px;
+    outline: none;
+}
+
+.input-field:focus {
+    border: 2px solid var(--orange);
+}
+
+/* Media Queries */
+@media only screen and (max-width: 600px) {
+    section {
+        margin-top: 10px;
+    }
+
+    .navbar-brand {
+        margin-left: 0rem;
+    }
+
+    .navbar-nav {
+        margin-left: 0rem;
+    }
+    #addUser{
+        margin-left: 0rem;
+        margin-top: -1rem;
+        width: 6rem;
+        height: 2rem;
+        font-size: 12px;
+    }
+    table{
+        align-items: center;
+        justify-content: center;
+        font-size: 10px;
+    }
+   
+}
+
+@media only screen and (max-width: 900px) {
+    section {
+        margin-top: 10px;
+    }
+
+    .navbar-brand {
+        margin-left: -2rem;
+    }
+
+    .navbar-nav {
+        margin-left: -2rem;
+    }
+    #addUser{
+        margin-left: 0rem;
+        margin-top: -1rem;
+        width: 6rem;
+        height: 2rem;
+        font-size: 12px;
+    }
+    table{
+        align-items: center;
+        justify-content: center;
+        font-size: 10px;
+    }
+}
+
+@media only screen and (max-width: 912px) {
+    section {
+        margin-top: 10px;
+    }
+
+    .navbar-brand {
+        margin-left: -2rem;
+    }
+
+    .navbar-nav {
+        margin-left: -2rem;
+    }
+    #addUser{
+        margin-left: 0rem;
+        margin-top: -1rem;
+        width: 6rem;
+        height: 2rem;
+        font-size: 12px;
+    }
+    table{
+        align-items: center;
+        justify-content: center;
+        font-size: 10px;
+    }
+}
+
+@media only screen and (max-width: 720px) {
+    section {
+        margin-top: 10px;
+    }
+
+    .navbar-brand {
+        margin-left: 0rem;
+    }
+
+    .navbar-nav {
+        margin-left: 0rem;
+    }
+    #addUser{
+        margin-left: 0rem;
+        margin-top: -1rem;
+        width: 6rem;
+        height: 2rem;
+        font-size: 12px;
+    }
+    table{
+        align-items: center;
+        justify-content: center;
+        font-size: 10px;
+    }
+}

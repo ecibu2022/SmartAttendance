@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../styles/user.css">
+</head>
+
+<body>
+
+
+    <!-- Nav Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white">
+        <div class="container">
+            <a class="navbar-brand text-warning" href="#"><img id="admin-img" src="../images/school.jpg" alt="">Ecibu
+                Michael</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="dashboard.html" id="home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="clockin.html" id="about">Clock In</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="clockout.html" id="about">Clock Out</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="profile.html">Profile</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-warning" href="#">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- End of Nav Bar -->
+
+
+    <!-- Service 1 - Bootstrap Brain Component -->
+    <br>
+    <section class="container py-5 py-xl-8" style="z-index: 9999;">
+
+        <div class="alert alert-danger fs-5" role="alert">
+            Are you sure you want to logout or exit the system? Click the button below
+        </div>
+
+        <a href="index.html" class="btn btn-danger col-4 fs-5">Logout</a>
+
+    </section>
+
+
+
+    <script src="../bootstrap/js/bootstrap.min.js"></script>
+</body>
+
+</html>
