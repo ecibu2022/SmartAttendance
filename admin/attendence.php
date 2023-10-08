@@ -106,23 +106,30 @@
                       </tr>
                     </thead>
                     <tbody>
-                      <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">2</th>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>@fat</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">3</th>
-                        <td colspan="2">Larry the Bird</td>
-                        <td>@twitter</td>
-                      </tr>
+                      <?php
+                      include_once "../php/connection.php";
+                      $query = "SELECT * FROM attendence";
+                      $query_run = mysqli_query($conn, $query);
+      
+      
+                      if ($query_run) {  // Check if the query was successful
+                          if (mysqli_num_rows($query_run) > 0) {
+                              foreach ($query_run as $row) {
+                                  ?>
+                                  <tr>
+                                      <td><?= $row['empno']; ?></td>
+                                      <td><?= $row['fname']. ' ' . $row['lname']; ?></td>
+                                      <td><?= $row['department']; ?></td>
+                                      <td><?= $row['designation']; ?></td>
+                                  </tr>
+                              <?php }
+                          } else {
+                              echo "<tr><td colspan='5'><h5>No attendence records found at the moment</h5></td></tr>";
+                          }
+                      } else {
+                          echo "Query failed: " . mysqli_error($conn);
+                      }
+                  ?>
                     </tbody>
                   </table>
 
