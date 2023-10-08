@@ -15,22 +15,22 @@ if (isset($_POST['save'])) {
     if (!preg_match("/^[a-zA-Z0-9]{5,}$/", $empno)) {
         echo "<script>
         window.alert('Invalid EMP NUMBER');
-        window.location.href = '../admin/users.html';
+        window.location.href = '../admin/users.php';
         </script>";
     } elseif (!preg_match("/^[a-zA-Z0-9]{5,}$/", $fname)) {
         echo "<script>
         window.alert('Invalid First Name');
-        window.location.href = '../admin/users.html';
+        window.location.href = '../admin/users.php';
         </script>";
     } elseif (!preg_match("/^[a-zA-Z0-9]{5,}$/", $lname)) {
         echo "<script>
         window.alert('Invalid Last Name');
-        window.location.href = '../admin/users.html';
+        window.location.href = '../admin/users.php';
         </script>";
     } elseif (strlen($contact) !== 10 || !is_numeric($contact)) {
         echo "<script>
         window.alert('Invalid Phone number, please enter ten numbers');
-        window.location.href = '../admin/users.html';
+        window.location.href = '../admin/users.php';
         </script>";
     } else {
         // Generating Password
@@ -55,14 +55,19 @@ if (isset($_POST['save'])) {
         if ($executeQuery) {
             echo "<script>
             window.alert('User has been created successfully');
-            window.location.href = '../admin/users.html';
+            window.location.href = '../admin/users.php';
             </script>";
-        } else {
-            echo "<script>
-            window.alert('An error occurred. Please try again');
-            window.location.href = '../admin/users.html';
-            </script>"; 
-        }
+         
+} else {
+    echo "<script>
+        window.alert('An error occurred. Please try again');
+        window.location.href = '../admin/users.php';
+        </script>"; 
+}
+    
+       
     }
 }
+
+
 ?>

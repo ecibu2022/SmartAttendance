@@ -1,10 +1,3 @@
-<?php
-include_once '../php/connection.php';
-
-?>
-
-
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -86,40 +79,67 @@ include_once '../php/connection.php';
           <div style="height: calc(100% - 64px); overflow-y: scroll">
             <div class="mx-auto" style="width: 96%">
 
+
               <div class="blockcode">
                 <div class="header">Registered Users <button id="myButton" class="btn btn-dark float-end text-white">Add User</button></div>
                 <div class="example">
-                  <table class="table">
-                    <thead>
-                      <tr>
-                        <th scope="col">EMP NO</th>
-                        <th scope="col">Name</th>
-                        <th scope="col">Department</th>
-                        <th scope="col">Designation</th>
-                        <th scope="col">Contact</th>
-                        <th scope="col">Actions</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <th scope="row">1</th>
-                        <td>Ecibu Michael</td>
-                        <td>IT</td>
-                        <td>MCC</td>
-                        <td>0773665471</td>
-                        <td><button id="updateButton" class="btn btn-success">Update</button><a href="http://" class="btn btn-danger">Delete</a></td>
-                      </tr>
-                     
-                    </tbody>
-                  </table>
+
+                <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Emp NO</th>
+            <th scope="col">Name</th>
+            <th scope="col">Department</th>
+            <th scope="col">Designation</th>
+            <th scope="col">Contact</th>
+            <th scope="col">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+
+        <?php
+                include_once "../php/connection.php";
+                $query = "SELECT * FROM users";
+                $query_run = mysqli_query($conn, $query);
+
+
+                if ($query_run) {  // Check if the query was successful
+                    if (mysqli_num_rows($query_run) > 0) {
+                        foreach ($query_run as $row) {
+                            ?>
+                            <tr>
+                                <td><?= $row['empno']; ?></td>
+                                <td><?= $row['fname']. ' ' . $row['lname']; ?></td>
+                                <td><?= $row['department']; ?></td>
+                                <td><?= $row['designation']; ?></td>
+                                <td><?= $row['contact']; ?></td>
+                                <td class="colspan-2">
+                                  <a href='' class='btn btn-success'>Edit</a>
+                               <a class="btn btn-danger" href="">Delete</a>
+                              </td>
+                            </tr>
+                        <?php }
+                    } else {
+                        echo "<tr><td colspan='5'><h5>No users found at the moment</h5></td></tr>";
+                    }
+                } else {
+                    echo "Query failed: " . mysqli_error($conn);
+                }
+            ?>
+        </tbody>
+      </table>
+
+
                 </div>
               </div>
               
+
 
           </div>
         </div>
       </div>
     </div>
+    
     <script>
       const sidebar = document.querySelector(".sidebar");
       new CDB.Sidebar(sidebar);
@@ -271,6 +291,7 @@ document.addEventListener('DOMContentLoaded', function() {
       myModal.show();
     });
   });
+
 
   </script>
   </body>
