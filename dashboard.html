@@ -192,6 +192,43 @@
 			menu_toggle.classList.toggle('is-active');
 			sidebar.classList.toggle('is-active');
 		});
+
+    
+    const menuItems = document.querySelectorAll('.menu-item');
+    const contentDivs = document.querySelectorAll('.page-content');
+
+    menuItems.forEach(function (menuItem) {
+        menuItem.addEventListener('click', function () {
+            // Hide all content divs
+            contentDivs.forEach(function (content) {
+                content.style.display = 'none';
+            });
+
+            // Remove 'is-active' class from all menu items
+            menuItems.forEach(function (item) {
+                item.classList.remove('is-active');
+            });
+
+            // Add 'is-active' class to the clicked menu item
+            menuItem.classList.add('is-active');
+
+            // Show the corresponding content div based on the clicked menu item
+            const targetId = menuItem.id + '-content';
+            const targetContent = document.getElementById(targetId);
+            if (targetContent) {
+                targetContent.style.display = 'block';
+            }
+        });
+    });
+
+<!-- ... (the rest of your HTML and script code) ... -->
+In this code, when a menu item is clicked, it hides all content divs and removes the 'is-active' class from all menu items. Then, it adds the 'is-active' class to the clicked menu item and displays the corresponding content div. The content divs are hidden by default and only displayed when the corresponding menu item is clicked.
+
+
+
+
+
+
 	</script>
 
     <script src="script.js"></script>
